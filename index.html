@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+</head>
+<body id="body">
+    <div id="navbar2"></div>
+    <div id="mainBar">
+        <div class="sidebar">
+            <div class="items item1">
+                <button onclick="btnHome()"style="border:none; background-color:#e7e8ea;"><input class="inputs" type="button"  value="Home" id="home" ></button>
+            </div>
+            <div class="items item2">
+                <button style="border:none; background-color:#e7e8ea;">
+                    <input class="inputs" type="button"  value="Latest">
+                </button>
+            </div>
+            <div class="items item3">
+                <button style="border:none;background-color:#e7e8ea;">
+                    <input class="inputs" type="button"  value="Markets">
+                </button>
+            </div>
+            <div class="items item4">
+                <button style="border:none;background-color:#e7e8ea;">
+                    <input class="inputs" type="button" id="you" value="For You">
+                </button>
+            </div>
+        </div>
+        <div id="newsDisplay">
+    
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    let type = "";
+    btnHome = () =>{
+    type = document.getElementById("home").value;
+    // console.log(type);
+    }
+    console.log(type);
+</script>
+
+<script type="module">
+     let type1 = "";
+    btnHome = () =>{
+    type1 = document.getElementById("home").value;
+    // console.log(type);
+    }
+    console.log(type1);
+
+// console.log(type);
+
+import navbar from "./components/navbar.js";
+import {getData, appendData} from "./scripts/getAppend.js";
+
+document.getElementById("navbar2").innerHTML = navbar();
+
+
+
+let url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1c8f9d4d806b403fa3891c613798ca16";
+
+let data = await getData(url);
+
+appendData(data);
+
+
+</script>

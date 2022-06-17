@@ -1,0 +1,19 @@
+
+a{
+    text-decoration:none;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-basis: 20% */
+    width: 20%;
+    border: 1px solid black;
+}
+.formThings{
+    justify-content:center;
+    align-items:center;
+    margin: 10px;
+}

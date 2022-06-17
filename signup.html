@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+</head>
+<body>
+    <div id="navbar2">
+    </div>
+        <div id="form">
+            <input type="text" id="name" placeholder="Enter name"
+            class="formThings">
+            <input type="text" placeholder="Enter username" id="username" class="formThings">
+            <input type="text" placeholder="Enter password" id="password" class="formThings">
+            <button onclick="btnClick()"> Sign up</button>
+        </div>
+</body>
+</html>
+
+<script>
+let arr = [];
+
+class objStore{
+    constructor(name, userName, password){
+        this.name = name;
+        this.userName = userName;
+        this.password = password;
+    }
+}
+function btnClick(){
+    localStorage.setItem("user", JSON.stringify([]));
+
+    let name = document.getElementById("name").value;
+    console.log(name);
+
+    let userName = document.getElementById("username").value;
+    
+    let password = document.getElementById("password").value;
+
+
+    let u1 = new objStore(name, userName, password);
+
+    arr.push(u1);
+    console.log(arr);
+
+    localStorage.setItem("user", JSON.stringify(arr));
+
+    document.getElementById("name").value = null;
+    document.getElementById("username").value = null;
+    document.getElementById("password").value = null;
+
+    alert("Signup successful!");
+
+    let nameOfUser = "";
+
+    let arr2 = JSON.parse(localStorage.getItem("user")) || [];
+    arr2.forEach(({name}) =>{
+        nameOfUser = name;
+    })
+    document.getElementById("sh3").innerHTML = nameOfUser;
+}
+
+</script>
+
+<script  type="module">
+
+import navbar from "./components/navbar.js";
+// import signup from "./components/signup.js";
+
+document.getElementById("navbar2").innerHTML = navbar();
+
+// signup();
+
+
+</script>
