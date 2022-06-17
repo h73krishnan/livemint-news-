@@ -4,23 +4,25 @@ let navbar = () =>{
     <div id="navbarFirst">
         <button id="exploreBtn">
             <div>
-                <i class="fa-solid fa-grip-lines"></i>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
             <div>
-                <h2>Explore</h2>
+                <h3>Explore</h3>
             </div>
         </button>
     </div>
     <div id="navbarSecond">
         <button id="mintBtn">
-            <img src="https://images.livemint.com/static/livemint-logo-v2.svg" alt="Mint">
+            <a href="/index.html"><h1 id="h1Mint">mint</h1></a>
         </button>
     </div>
     <div id="navbarThird">
         <i class="fa-solid fa-magnifying-glass"></i>
         <i class="fa-solid fa-bell"></i>
         <h3 id="eh3">e-paper</h3>
-        <h3 id="sh3">Sign in</h3>
+        <button id="sh3"><a  href="signup.html" id="ah3">Sign up</a></button>
     </div>
 </div>`
 };
